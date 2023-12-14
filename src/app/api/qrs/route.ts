@@ -2,10 +2,11 @@ import prisma from "@/lib/prisma"
 import { NextResponse } from "next/server";
 
 function newErrorResponse(message: string, error: string, status: number) {
-    return NextResponse.json({
+    let response = NextResponse.json({
         error: error,
         message: message
-    }, {status: status})
+    }, {status: status, headers: {'Access-Control-Allow-Origin': '*'}})
+    return response
 }
 
 const containsNonNumeric = /[^0-9]/
@@ -45,5 +46,5 @@ export async function GET(request: Request) {
         })
     }
 
-    return new Response(JSON.stringify(qr), {status: 200})
+    return new Response(JSON.stringify(qr), {status: 200, headers: {'Access-Control-Allow-Origin': "*"}});
 }
