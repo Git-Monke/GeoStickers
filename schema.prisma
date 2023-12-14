@@ -3,9 +3,8 @@ generator client {
 }
 
 datasource db {
-    provider     = "mysql"
-    url          = env("DATABASE_URL")
-    relationMode = "prisma"
+    provider = "mysql"
+    url      = "mysql://cmmvc95bhhkvu2rjxzvc:pscale_pw_P4DR80YJyGeBjxhG8pAmf4ABTGXSEAL6NunWMnJyOsI@aws.connect.psdb.cloud/geostickers?sslaccept=strict"
 }
 
 model QR {
