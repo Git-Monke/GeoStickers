@@ -1,0 +1,47 @@
+[debug] [2023-12-14T02:19:39.272Z] ----------------------------------------------------------------------
+[debug] [2023-12-14T02:19:39.273Z] Command:       /Users/jacob/.nvm/versions/node/v21.4.0/bin/node /Users/jacob/.nvm/versions/node/v21.4.0/bin/firebase init
+[debug] [2023-12-14T02:19:39.273Z] CLI Version:   13.0.1
+[debug] [2023-12-14T02:19:39.274Z] Platform:      darwin
+[debug] [2023-12-14T02:19:39.274Z] Node Version:  v21.4.0
+[debug] [2023-12-14T02:19:39.274Z] Time:          Wed Dec 13 2023 18:19:39 GMT-0800 (Pacific Standard Time)
+[debug] [2023-12-14T02:19:39.274Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-14T02:19:39.277Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-14T02:19:39.277Z] > authorizing via signed-in user (javelasq2006@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/jacob/Next/geostickers
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-12-14T02:19:46.257Z] > refreshing access token with scopes: []
+[debug] [2023-12-14T02:19:46.261Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-14T02:19:46.261Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-14T02:19:46.553Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-14T02:19:46.553Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-14T02:19:46.596Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-12-14T02:19:47.009Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-12-14T02:19:47.009Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project geostickers-372e9 (GeoStickers) 
+[info] 
+=== Hosting Setup
+[debug] [2023-12-14T02:19:49.375Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/geostickers-372e9 [none]
+[debug] [2023-12-14T02:19:49.547Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/geostickers-372e9 200
+[debug] [2023-12-14T02:19:49.547Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/geostickers-372e9 {"projectId":"geostickers-372e9","projectNumber":"580462931228","displayName":"GeoStickers","name":"projects/geostickers-372e9","resources":{"hostingSite":"geostickers-372e9"},"state":"ACTIVE","etag":"1_8a0a1f48-78bf-4782-8e95-2ae9c4ef2175"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
