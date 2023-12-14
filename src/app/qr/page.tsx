@@ -56,6 +56,7 @@ export default function Page() {
                 localStorage.setItem("scannedIDS", JSON.stringify(alreadyStoredIDS));
             }
             
+            sessionStorage.setItem("QRID", data.index)
             setData(data)
         }
         run()
