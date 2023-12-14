@@ -50,7 +50,7 @@ export default function Page() {
             }
 
             if (hasNonNumeric) {
-                let asidsString = localStorage.getItem("alreadyStoredIDS")
+                let asidsString = localStorage.getItem("scannedIDS")
                 let alreadyStoredIDS = asidsString ? JSON.parse(asidsString) as ScannedIDS : {}
                 alreadyStoredIDS[QRID] = data.index
                 localStorage.setItem("scannedIDS", JSON.stringify(alreadyStoredIDS));
