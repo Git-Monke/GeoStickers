@@ -35,7 +35,7 @@ export default function Page() {
 
             sessionStorage.setItem("QRID", "")
 
-            let response = await fetch(new Request("http://localhost:3000/api/qrs?id=" + QRID))
+            let response = await fetch(new Request("https://geostickers.vercel.app/api/qrs?id=" + QRID))
             let data = await response.json();
 
             if (response.status != 200) {
