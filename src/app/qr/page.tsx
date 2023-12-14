@@ -13,6 +13,10 @@ interface Data {
     scans: number
 }
 
+interface ScannedIDS {
+    [key: string | number]: string
+}
+
 const dateFormatString = "EEEE, MMMM do, yyyy, 'at' h:mm a";
 
 export default function Page() {
@@ -31,7 +35,9 @@ export default function Page() {
                 return;
             }
 
-            setRedirect((/[^0-9]/).test(QRID))
+            const hasNonNumeric = (/[^0-9]/).test(QRID)
+
+            setRedirect(hasNonNumeric)
 
             sessionStorage.setItem("QRID", "")
 
@@ -43,6 +49,13 @@ export default function Page() {
                 setErrorMessage(data.message);
             }
 
+            if (hasNonNumeric) {
+                let asidsString = localStorage.getItem("alreadyStoredIDS")
+                let alreadyStoredIDS = asidsString ? JSON.parse(asidsString) as ScannedIDS : {}
+                alreadyStoredIDS[QRID] = data.index
+                localStorage.setItem("scannedIDS", JSON.stringify(alreadyStoredIDS));
+            }
+            
             setData(data)
         }
         run()

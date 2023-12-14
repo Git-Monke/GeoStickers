@@ -2,6 +2,10 @@
 
 import { useSearchParams, useRouter } from "next/navigation"
 
+interface ScannedIDS {
+  [key: string | number]: string
+}
+
 export default function Home() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -9,7 +13,15 @@ export default function Home() {
   const scanID = searchParams.get("s")
   
   if (scanID) {
-    sessionStorage.setItem("QRID", scanID)
+    let asidsString = localStorage.getItem("scannedIDS")
+    let alreadyScannedIDS = asidsString ? JSON.parse(asidsString) as ScannedIDS : {}
+
+    if (alreadyScannedIDS[scanID]) {
+      sessionStorage.setItem("QRID", alreadyScannedIDS[scanID])
+    } else {
+      sessionStorage.setItem("QRID", scanID)
+    }
+
     router.push("/qr")
     return;
   }
