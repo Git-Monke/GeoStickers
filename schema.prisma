@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
     provider = "mysql"
-    url      = "mysql://cmmvc95bhhkvu2rjxzvc:pscale_pw_P4DR80YJyGeBjxhG8pAmf4ABTGXSEAL6NunWMnJyOsI@aws.connect.psdb.cloud/geostickers?sslaccept=strict"
+    url      = "mysql://6nijcz8gwf6zomun1iex:pscale_pw_2AcNwB2PbyeYT2tWfqaFGDzofJDewtF9Au754VeuoH2@aws.connect.psdb.cloud/geostickers?sslaccept=strict"
 }
 
 model QR {
