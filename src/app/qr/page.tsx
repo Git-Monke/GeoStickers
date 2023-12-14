@@ -73,11 +73,20 @@ export default function Page() {
     const scans = data.scans + (redirectedByScan ? 1 : 0)
 
     return (
-        <>
-            <h1>This is the {converter.toOrdinal(data.index)} QR (world-wide)</h1>
-            {redirectedByScan ? <h1>You're the {converter.toWordsOrdinal(scans)} person to scan this QR!</h1> : <h1>This QR has been scanned {(scans).toLocaleString()} time{scans !== 1 ? "s" : ""}!</h1>}
-            <h1>It was created on {format(parseISO(data.createdAt), dateFormatString)} ({formatDistanceToNow(parseISO(data.createdAt), {addSuffix: true})})</h1>
-            {scans === 0 ? <h1>This QR has never been scanned!</h1> : scans === 1 && redirectedByScan ? <h1>You're the first person to scan this QR!</h1> : <h1>It was last scanned {formatDistanceToNow(parseISO(data.lastScanned), {addSuffix: true})}</h1>}
-        </>
+        <div className="centeredComponent">
+            <h1 className="text-2xl font-bold text-gray-800 mb-4 font-bold">This is the {converter.toOrdinal(data.index)} QR (world-wide)</h1>
+            
+            {redirectedByScan ? 
+                <h1 className="text-xl text-blue-600 mb-2">You're the {converter.toWordsOrdinal(scans)} person to scan this QR!</h1> : 
+                <h1 className="text-xl text-green-600 mb-2">This QR has been scanned {(scans).toLocaleString()} time{scans !== 1 ? "s" : ""}!</h1>}
+            
+            <h1 className="text-lg text-purple-600 mb-3">It was created on {format(parseISO(data.createdAt), dateFormatString)} ({formatDistanceToNow(parseISO(data.createdAt), {addSuffix: true})})</h1>
+            
+            {scans === 0 ? 
+                <h1 className="text-lg text-red-500 mb-3">This QR has never been scanned!</h1> : 
+                scans === 1 && redirectedByScan ? 
+                <h1 className="text-lg text-pink-500 mb-3">You're the first person to scan this QR!</h1> : 
+                <h1 className="text-lg text-indigo-500">It was last scanned {formatDistanceToNow(parseISO(data.lastScanned), {addSuffix: true})}</h1>}
+        </div> 
     )
 }
